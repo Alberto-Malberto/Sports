@@ -160,6 +160,7 @@ p {
     height: 835px;
     position: relative;
     margin-bottom: 29px;
+    /* perspective: 900px; */
 }
 
 .sports__container {
@@ -213,8 +214,10 @@ p {
     height: 634px;
 }
 
-.sports__card-body{
+.sports__card-body {
     transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
 }
 
 .sports__card-back {
@@ -227,6 +230,7 @@ p {
     top: 0;
     left: 0;
     transform: rotateY(180deg);
+    transition: 0.5s;
 }
 
 .sports__card-back h2 {
@@ -239,15 +243,16 @@ p {
     border: white 1px solid;
 }
 
-.sports__card input{
+.sports__card input {
     position: absolute;
     z-index: 5;
     width: 100%;
     height: 100%;
     opacity: 0;
+    top: 0;
+    left: 0;
 }
 
-.sports__card input:checked ~ .sports__card-body{
+.sports__card input:checked~.sports__card-body {
     transform: rotateY(180deg);
 }
-
