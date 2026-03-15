@@ -1,0 +1,253 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-ExtraBold.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-ExtraBoldItalic.ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url("fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+:root {
+    --bg: #ED6666;
+    --accent-color: #6BBDEB;
+    --white-text: white;
+    --black-text: black;
+    --gradient2: #C15555;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+}
+
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1rem;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    background: radial-gradient(50% 50% at 50% 50%, var(--bg) 0%, var(--gradient2) 100%);
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.header__ronaldiki {
+    position: absolute;
+    bottom: 67px;
+    left: 28%;
+}
+
+.nav__container {
+    display: flex;
+    background-color: var(--accent-color);
+    color: white;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 20px;
+    height: 120px;
+}
+
+.nav__text {
+    line-height: 120px;
+}
+
+.nav__container p,
+.nav__container label {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+}
+
+.nav__burger-body {
+    display: flex;
+    height: calc(100vh - 120px);
+    background-color: var(--accent-color);
+    flex-direction: column;
+    text-align: right;
+    padding: 49px 30px;
+    gap: 42px;
+    scale: 0;
+    transition: 0.5s;
+    transform-origin: top right;
+}
+
+.nav__burger-body a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#menu-toggle:checked~.nav__burger-body {
+    scale: 1;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.front-image {
+    width: 100%;
+}
+
+.sports__card {
+    width: 100%;
+    height: 835px;
+    position: relative;
+    margin-bottom: 29px;
+}
+
+.sports__container {
+    padding: 0 21px;
+}
+
+.main {
+    background-color: var(--bg);
+}
+
+.sports__card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    backface-visibility: hidden;
+}
+
+.sports__front-top {
+    display: flex;
+    background-color: var(--accent-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 19px;
+    color: var(--white-text)
+}
+
+.sports__front-top p {
+    font-size: 2rem;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.front-footer {
+    background-color: var(--white-text);
+    font-style: italic;
+    padding: 45px 47px;
+}
+
+.front-footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+.front-image {
+    display: block;
+    height: 634px;
+}
+
+.sports__card-body{
+    transform-style: preserve-3d;
+}
+
+.sports__card-back {
+    position: absolute;
+    background-color: var(--accent-color);
+    padding: 30px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+}
+
+.sports__card-back h2 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.sports__card-back hr {
+    margin: 30px 13px;
+    border: white 1px solid;
+}
+
+.sports__card input{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.sports__card input:checked ~ .sports__card-body{
+    transform: rotateY(180deg);
+}
+
