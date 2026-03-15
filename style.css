@@ -160,7 +160,7 @@ p {
     height: 835px;
     position: relative;
     margin-bottom: 29px;
-    /* perspective: 900px; */
+    perspective: 900px;
 }
 
 .sports__container {
@@ -218,6 +218,7 @@ p {
     transform-style: preserve-3d;
     height: 100%;
     width: 100%;
+    transition: 0.5s;
 }
 
 .sports__card-back {
@@ -230,7 +231,6 @@ p {
     top: 0;
     left: 0;
     transform: rotateY(180deg);
-    transition: 0.5s;
 }
 
 .sports__card-back h2 {
